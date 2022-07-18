@@ -1,0 +1,39 @@
+// 注解容器初始化
+public class AnnotationConfigApplicationContext
+
+// bean定义
+public interface BeanDefinition extends AttributeAccessor, BeanMetadataElement {
+
+// 创建bean实例，生命周期的创建
+protected Object doCreateBean(String beanName
+
+// 获得bean
+protected <T> T doGetBean
+// 调用链路        doGetBean   getSingleton  return
+                                            doCreateBean 创建bean实例，赋值，初始化
+                                               populateBean
+                                                      return
+
+// 单例模式下用三级缓存解决循环依赖
+protected Object getSingleton
+
+
+
+// springMVC  handlerAdapter适配器模式
+public interface HandlerAdapter {
+
+protected HandlerExecutionChain getHandler(HttpServletRequest request) throws Exception {
+
+protected HandlerAdapter getHandlerAdapter(Object handler) throws ServletException {
+
+
+// bean工厂
+public interface BeanFactory {
+
+
+// 事务
+public @interface Transactional {
+// 事务隔离级别
+public enum Isolation {
+// 事务传播方式
+public interface TransactionDefinition {
