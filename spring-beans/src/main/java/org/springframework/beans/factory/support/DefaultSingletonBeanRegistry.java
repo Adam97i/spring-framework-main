@@ -179,7 +179,7 @@ public class DefaultSingletonBeanRegistry extends SimpleAliasRegistry implements
 	/**
 	 * 一级缓存 完整对象 singletonObjects
 	 * 二级缓存 早期对象 earlySingletonObjects
-	 * 三级缓存 工厂对象singletonFactory
+	 * 三级缓存 对象工厂 singletonFactory，既可以生成代理对象，也能生成普通对象
 	 */
 	@Nullable
 	protected Object getSingleton(String beanName, boolean allowEarlyReference) {
