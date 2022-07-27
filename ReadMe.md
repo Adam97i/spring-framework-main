@@ -24,19 +24,19 @@ public class AnnotationConfigApplicationContext
 
 // bean定义
 public interface BeanDefinition extends AttributeAccessor, BeanMetadataElement 
+    
 
-// 创建bean实例，生命周期的创建
-protected Object doCreateBean(String beanName
-
-// 获得bean
+// 获得bean 
+// 单例模式下先创建bean的依赖，再通过缓冲池获得单例bean，不存在则 createBean
+// 原型模式则返回新的实例
 protected <T> T doGetBean
-// 调用链路        doGetBean   getSingleton  return
-                                            doCreateBean 创建bean实例，赋值，初始化
-                                               populateBean
-                                                      return
-
+        
 // 单例模式下用三级缓存解决循环依赖
 protected Object getSingleton
+
+// 创建bean实例，赋值，初始化 
+// bean的生命周期 instance -> populate -> initialize -> destroy
+protected Object doCreateBean
 
 // bean工厂
 public interface BeanFactory
